@@ -25,7 +25,7 @@ const Home = () => {
       
       if (response.data.bit === 1) {
         console.log(response.data.user_1);
-        update(response.data.user_1[0].name);
+        update(response.data);
         console.log("Updated context data:", data);
         navigate('/Profile'); 
       }

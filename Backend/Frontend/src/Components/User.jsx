@@ -44,7 +44,7 @@ const User = () => {
         setProfileData(updatedProfileData);
 
         
-        await axios.post('http://localhost:5000/photo', updatedProfileData[index]);
+        await axios.post('https://chat-app-mymw.onrender.com/photo', updatedProfileData[index]);
       } catch (err) {
         console.log(err);
       }
