@@ -147,7 +147,7 @@ const Room = () => {
       <h2 className="room-title">Room Page</h2>
       <div className="video-container">
         <div className="video-box">{mystream && <ReactPlayer url={mystream} playing muted />}</div>
-        <div className="video-box">{remoteStream && <ReactPlayer url={remoteStream} playing muted />}</div>
+        <div className="video-box">{remoteStream && <ReactPlayer url={remoteStream} playing  />}</div>
       </div>
       <div className="message-container">
         <div className="messages">
