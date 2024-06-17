@@ -27,7 +27,7 @@ const Home = () => {
         console.log(response.data.user_1);
         update(response.data.user_1[0].name);
         console.log("Updated context data:", data);
-        navigate('/'); 
+        navigate('/Profile'); 
       }
     } catch (error) {
       console.error('Error submitting form', error);
