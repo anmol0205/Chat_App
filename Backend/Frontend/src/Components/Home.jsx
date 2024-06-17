@@ -18,7 +18,7 @@ const Home = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://restaurant-webapp-95px.onrender.com/auth/login', formData);
+      const response = await axios.post('https://chat-app-mymw.onrender.com/login', formData);
       console.log("Received response data:", response.data);
       
       setMsg(response.data.message);

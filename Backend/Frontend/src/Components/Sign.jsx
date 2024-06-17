@@ -11,7 +11,7 @@ const SignUp = () => {
   const handleSubmit= async (e)=>{
     e.preventDefault();
     try{
-      const response = await axios.post('http://localhost:5000/sign', formdata);
+      const response = await axios.post('https://chat-app-mymw.onrender.com/sign', formdata);
       console.log(response);
       setMsg(response.data.message);
 
