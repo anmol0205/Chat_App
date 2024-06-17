@@ -31,12 +31,14 @@ io.on("connection", (socket) => {
 
   socket.on('request', (id) => {
     try {
-      
-      io.to(id).emit('send', {id:socket.id , name:sock_to_user[socket.id].name});
+       
+
+        io.to(id).emit('send', { id: socket.id, name: sock_to_user[socket.id].name });
     } catch (error) {
-      console.error('Error in request:', error);
+        console.error('Error in request:', error);
     }
-  });
+});
+
   socket.on('accept', (id)=>{
     socket.to(id).emit('call_accepted', id);
   })
@@ -46,6 +48,12 @@ io.on("connection", (socket) => {
 
   socket.on('inform', (id) => {
     try {
+      let existingIndex = users.findIndex((user) => user.soc === socket.id);
+
+      if (existingIndex !== -1) {
+          users.splice(existingIndex, 1);
+      }
+
 
       io.emit('user_remove', id);
     } catch (error) {

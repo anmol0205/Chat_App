@@ -26,6 +26,7 @@ const Lobby = () => {
 
   const accept = () => {
     update(frnd_id);
+    setPageData((prevData) => prevData.filter(user => user.soc !== frnd_id));
     socket.emit('accept', frnd_id);
     socket.emit('inform', frnd_id);
     setTimeout(() => {
@@ -57,6 +58,7 @@ const Lobby = () => {
 
     const handleCallAccepted = (id) => {
       socket.emit('inform', socket.id);
+      setPageData((prevData) => prevData.filter(user => user.soc !== frnd_data));
       setTimeout(() => {
         navigate(`/room/${socket.id}`);
       }, 0);

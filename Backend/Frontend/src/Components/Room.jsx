@@ -16,7 +16,7 @@ const Room = () => {
   const socket = useSocket();
 
   const sendStreams = useCallback(() => {
-    if (bit==0) {
+    if (bit===0) {
       for (const track of mystream.getTracks()) {
         peer.peer.addTrack(track, mystream);
       }
@@ -59,6 +59,7 @@ const Room = () => {
   const handleAcception = useCallback(async (data) => {
     try {
       await peer.set_Remote_Description(data.ans);
+      
       console.log('Answer set to remote description.');
       
     } catch (error) {
@@ -169,8 +170,8 @@ const Room = () => {
         </form>
       </div>
       <div className="button-container">
-        <button className="start-video-button" onClick={handleClick}>Start Video</button>
-        {mystream && <button className="send-stream-button" onClick={sendStreams}>Send Stream</button>}
+        {!mystream && <button className="start-video-button" onClick={handleClick}>Start Video</button>}
+        {mystream&& bit===0 && <button className="send-stream-button" onClick={sendStreams}>Send Stream</button>}
       </div>
     </div>
   );
