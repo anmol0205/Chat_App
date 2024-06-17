@@ -31,14 +31,22 @@ io.on("connection", (socket) => {
 
   socket.on('request', (id) => {
     try {
-      io.to(id).emit('send', socket.id);
+      
+      io.to(id).emit('send', {id:socket.id , name:sock_to_user[socket.id].name});
     } catch (error) {
       console.error('Error in request:', error);
     }
   });
+  socket.on('accept', (id)=>{
+    socket.to(id).emit('call_accepted', id);
+  })
+  socket.on('rejected', (id)=>{
+    socket.to(id).emit('call_rejected',id);
+  })
 
   socket.on('inform', (id) => {
     try {
+
       io.emit('user_remove', id);
     } catch (error) {
       console.error('Error in inform:', error);
