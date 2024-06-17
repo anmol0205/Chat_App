@@ -33,7 +33,7 @@ const SignUp = () => {
       }}>
         <div style={{ marginBottom: '20px', textAlign: 'center' }}>
           <h2 style={{ margin: '0 0 10px' }}>SIGN</h2>
-          <Link to='/Login' style={{ textDecoration: 'none', fontSize: '14px', color: '#007bff' }}>LOGIN</Link>
+          <Link to='/' style={{ textDecoration: 'none', fontSize: '14px', color: '#007bff' }}>LOGIN</Link>
         </div>
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
           <div style={{ marginBottom: '15px' }}>
