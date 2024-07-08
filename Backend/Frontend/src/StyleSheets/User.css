@@ -1,0 +1,90 @@
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .profile-box {
+    background: #fff;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    position: relative;
+  }
+  
+  .profile-photo-button {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .profile-photo-button input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 600px;
+    width: 800px;
+  }
+  
+  .profile-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+    
+  }
+  
+ 
+  
+  .profile-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  .friends-box {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    text-align: left;
+  }
+  
+  .friends-title {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .friend-item {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+  }
+  
+  .lobby-button {
+    display: block;
+    margin: 40px auto;
+    padding: 15px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #edb138;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .lobby-button:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+  }
+  
